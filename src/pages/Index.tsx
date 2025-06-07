@@ -68,8 +68,14 @@ const Index: React.FC = () => {
                             price={skip.price_before_vat}
                             vat={skip.vat}
                             postcode={skip.postcode}
+                            transport_cost={skip.transport_cost}
+                            per_tonne_cost={skip.per_tonne_cost}
                             allowed_on_road={skip.allowed_on_road}
+                            allows_heavy_waste={skip.allows_heavy_waste}
+                            updated_at={skip.updated_at}
+                            created_at={skip.created_at}
                             isSelected={selectedSkip === skip.id}
+                            
                             onSelect={() => handleSkipSelect(skip.id)}
                         />
                     ))}
