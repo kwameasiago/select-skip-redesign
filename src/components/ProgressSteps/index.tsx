@@ -20,7 +20,7 @@ const ProgressSteps: React.FC<ProgressStepsProps> = ({ steps }) => {
       <Button
         variant="outline"
         onClick={() => { }}
-        className="flex items-center gap-2 px-4 py-2 border-2 hover:bg-muted rounded-full"
+        className="flex items-center gap-2 px-4 py-2 border-2 hover:bg-muted !rounded-full"
         size="sm"
       >
         <ArrowLeft className="w-4 h-4" />
@@ -41,7 +41,7 @@ const ProgressSteps: React.FC<ProgressStepsProps> = ({ steps }) => {
       <Button
         variant="outline"
         onClick={() => { }}
-        className="flex items-center gap-2 px-4 py-2 border-2 hover:bg-muted rounded-full"
+        className="flex items-center gap-2 px-4 py-2 border-2 hover:bg-muted !rounded-full"
         size="sm"
       >
         
