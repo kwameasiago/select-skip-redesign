@@ -73,16 +73,12 @@ This is a modern, responsive React-based frontend application designed to allow 
 
 ---
 
-Let me know when you're ready to move on to the **Folder Structure** and **Design Decisions** sections.
-
----
-
 ##  Design Rationale 
 
 ### 1. Dark and Light toggle theme
 
-![[Pasted image 20250607222105.png]]
-![[Pasted image 20250607222125.png]]
+![Dark and Light toggle theme](documentation/images/20250607222105.png)
+![Dark and Light toggle theme](documentation/images/20250607222125.png)
 - **Gives users control** – Some people prefer light mode during the day, others like dark mode at night. The toggle lets them choose what’s most comfortable.
     
 - **Reduces eye strain** – Dark mode is easier on the eyes in low light. Light mode is clearer in bright settings. This makes the app more comfortable to use anywhere.
@@ -95,7 +91,7 @@ Let me know when you're ready to move on to the **Folder Structure** and **Desig
 
 
 ###  2. Multi-Step Progress Indicator with Color Coding
-![[Pasted image 20250607222515.png]]
+![Multi-Step Progress Indicator with Color Coding](documentation/images/20250607222515.png)
 - **Shows users where they are** – People feel more confident when they know their place in a process. A progress tracker shows what’s done, what’s in progress, and what’s next.
 
 - **Encourages users to finish** – Seeing completed steps gives a sense of achievement. It’s like checking off a to-do list, which motivates people to keep going.
@@ -103,18 +99,18 @@ Let me know when you're ready to move on to the **Folder Structure** and **Desig
 - **Helps users understand the process** – When users see the number of steps, they get a clear idea of what’s involved. It removes uncertainty and makes the journey feel manageable.
 
 ### 3. Card Design UX Rationale
-![[Pasted image 20250607223508.png]]
+![Card Design UX Rationale](documentation/images/20250607223508.png)
 
-![[Pasted image 20250607223530.png]]
+![Card Design UX Rationale](documentation/images/20250607223530.png)
 
-![[Pasted image 20250607223556.png]]
+![Card Design UX Rationale](documentation/images/20250607223556.png)
 - **Enables quick decision-making** – Users tend to skim, not read. These cards highlight the most important info like title, cost, and hire period clearly, while tucking away less critical details. This makes it easy to compare and choose at a glance.
 
 - **Uses color to guide choices** – Green cards feel safe and ready to go, making the “Selected” state reassuring. Orange or red cards draw attention to skips that might need a road permit or have added cost. The colors are there to help users decide faster and smarter.
 
 - **Keeps layout consistent** – Every card follows the same structure, so comparing options is effortless. Users don’t need to re-learn how to read each one — they can instantly notice what’s different, like price or permissions.
 
-- **Provides clear feedback** – When a user selects a card, it changes visually to confirm the action. If certain information is missing, it’s dimmed to avoid clutter but still communicates meaning. Status badges give helpful cues without overwhelming the layout.
+- **Provides clear feedback** – When a user selects a card, it changes visually to confirm the action. Status badges give helpful cues without overwhelming the layout.
 
 - **Supports accessibility** – Color is always backed up by text labels, making it easy to understand even for users with colorblindness. The typography and spacing also follow good accessibility practices, so everything stays readable and clear.
 
