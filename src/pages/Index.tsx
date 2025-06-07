@@ -5,6 +5,7 @@ import { fetchSkips } from '../redux/skipsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from '../redux/store';
 import SkipCard from "../components/SkipCard";
+import SkipSizeSkeleton from '../components/Skeleton/SkipSizeSkeleton'
 
 
 type ProgressStep = {
@@ -38,7 +39,7 @@ const Index: React.FC = () => {
     };
 
     if (loading) {
-        return <h1>Loading ....</h1>
+        return <SkipSizeSkeleton />
     }
 
     return (
@@ -53,40 +54,41 @@ const Index: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-center overflow-x-auto pb-4">
                     <ProgressSteps steps={progressStepsData} />
-                    
+
                 </div>
             </div>
+            <div className="max-w-7xl mx-auto px-4 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 px-8" >
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    {data.map((skip) => (
+                        <SkipCard
+                            key={skip.id}
+                            size={skip.size}
+                            hirePeriod={skip.hire_period_days}
+                            price={skip.price_before_vat}
+                            vat={skip.vat}
+                            postcode={skip.postcode}
+                            allowed_on_road={skip.allowed_on_road}
+                            isSelected={selectedSkip === skip.id}
+                            onSelect={() => handleSkipSelect(skip.id)}
+                        />
+                    ))}
+                </div>
 
-                {data.map((skip) => (
-                    <SkipCard
-                        key={skip.id}
-                        size={skip.size}
-                        hirePeriod={skip.hire_period_days}
-                        price={skip.price_before_vat}
-                        vat={skip.vat}
-                        postcode={skip.postcode}
-                        allowed_on_road={skip.allowed_on_road}
-                        isSelected={selectedSkip === skip.id}
-                        onSelect={() => handleSkipSelect(skip.id)}
-                    />
-                ))}
-            </div>
-
-            <div className="mt-16 text-center">
-                <div className="bg-card rounded-2xl p-8 shadow-lg max-w-4xl mx-auto border">
-                    <h3 className="text-2xl font-bold text-foreground mb-4">Need Help Choosing?</h3>
-                    <p className="text-muted-foreground mb-6">
-                        Not sure which skip size is right for your project? Our team is here to help you make the best choice.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                            Call Us: 0800 123 4567
-                        </button>
-                        <button className="border border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950 px-6 py-3 rounded-lg font-semibold transition-colors">
-                            Get Size Guide
-                        </button>
+                <div className="mt-16 text-center">
+                    <div className="bg-card rounded-2xl p-8 shadow-lg max-w-4xl mx-auto border">
+                        <h3 className="text-2xl font-bold text-foreground mb-4">Need Help Choosing?</h3>
+                        <p className="text-muted-foreground mb-6">
+                            Not sure which skip size is right for your project? Our team is here to help you make the best choice.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                Call Us: 0800 123 4567
+                            </button>
+                            <button className="border border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950 px-6 py-3 rounded-lg font-semibold transition-colors">
+                                Get Size Guide
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
