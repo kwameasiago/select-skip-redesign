@@ -18,7 +18,7 @@ type ProgressStep = {
 const Index: React.FC = () => {
     const [selectedSkip, setSelectedSkip] = useState<number | null>(null);
     const dispatch = useDispatch<AppDispatch>()
-    const { data, error, loading } = useSelector((state: RootState) => state.skips)
+    const { data, loading } = useSelector((state: RootState) => state.skips)
 
     useEffect(() => {
         dispatch(fetchSkips({ postcode: 'NR32', area: 'Lowestoft' }))
