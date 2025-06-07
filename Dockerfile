@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expose the preview server port
-EXPOSE 4173
+EXPOSE 5173
 
 # Start the production preview server
-CMD ["npm", "run", "preview"]
+CMD ["npm", "run", "dev"]
